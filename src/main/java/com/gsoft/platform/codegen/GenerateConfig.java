@@ -8,7 +8,7 @@
  public class GenerateConfig{
    private String sourceHome = "";
  
-   private String javaMainHome = "src";
+   private String javaMainHome = "src/main/java";
    private String javaTestHome = "";
    private String jspHome = "";
  
