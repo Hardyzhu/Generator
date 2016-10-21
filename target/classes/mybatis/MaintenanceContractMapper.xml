@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.winphone.mapper.MaintenanceContractMapper" >
+  <resultMap id="BaseResultMap" type="com.winphone.entity.MaintenanceContract" >
+    <id column="maintenance_contract_id_" property="maintenanceContractId" jdbcType="CHAR" />
+    <result column="maintenance_contract_no_" property="maintenanceContractNo" jdbcType="CHAR" />
+    <result column="device_id_" property="deviceId" jdbcType="CHAR" />
+    <result column="maintenance_term_" property="maintenanceTerm" jdbcType="VARCHAR" />
+    <result column="maintenance_linkman_" property="maintenanceLinkman" jdbcType="VARCHAR" />
+    <result column="maintenance_linkphone_" property="maintenanceLinkphone" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="CHAR" />
+    <result column="create_time_" property="createTime" jdbcType="VARCHAR" />
+    <result column="update_user_" property="updateUser" jdbcType="CHAR" />
+    <result column="update_time_" property="updateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    maintenance_contract_id_, maintenance_contract_no_, device_id_, maintenance_term_, 
+    maintenance_linkman_, maintenance_linkphone_, create_user, create_time_, update_user_, 
+    update_time_
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dm_maintenance_contract_
+    where maintenance_contract_id_ = #{maintenanceContractId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dm_maintenance_contract_
+    where maintenance_contract_id_ = #{maintenanceContractId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.winphone.entity.MaintenanceContract" >
+    insert into dm_maintenance_contract_ (maintenance_contract_id_, maintenance_contract_no_, 
+      device_id_, maintenance_term_, maintenance_linkman_, 
+      maintenance_linkphone_, create_user, create_time_, 
+      update_user_, update_time_)
+    values (#{maintenanceContractId,jdbcType=CHAR}, #{maintenanceContractNo,jdbcType=CHAR}, 
+      #{deviceId,jdbcType=CHAR}, #{maintenanceTerm,jdbcType=VARCHAR}, #{maintenanceLinkman,jdbcType=VARCHAR}, 
+      #{maintenanceLinkphone,jdbcType=VARCHAR}, #{createUser,jdbcType=CHAR}, #{createTime,jdbcType=VARCHAR}, 
+      #{updateUser,jdbcType=CHAR}, #{updateTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.winphone.entity.MaintenanceContract" >
+    insert into dm_maintenance_contract_
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="maintenanceContractId != null" >
+        maintenance_contract_id_,
+      </if>
+      <if test="maintenanceContractNo != null" >
+        maintenance_contract_no_,
+      </if>
+      <if test="deviceId != null" >
+        device_id_,
+      </if>
+      <if test="maintenanceTerm != null" >
+        maintenance_term_,
+      </if>
+      <if test="maintenanceLinkman != null" >
+        maintenance_linkman_,
+      </if>
+      <if test="maintenanceLinkphone != null" >
+        maintenance_linkphone_,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createTime != null" >
+        create_time_,
+      </if>
+      <if test="updateUser != null" >
+        update_user_,
+      </if>
+      <if test="updateTime != null" >
+        update_time_,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="maintenanceContractId != null" >
+        #{maintenanceContractId,jdbcType=CHAR},
+      </if>
+      <if test="maintenanceContractNo != null" >
+        #{maintenanceContractNo,jdbcType=CHAR},
+      </if>
+      <if test="deviceId != null" >
+        #{deviceId,jdbcType=CHAR},
+      </if>
+      <if test="maintenanceTerm != null" >
+        #{maintenanceTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceLinkman != null" >
+        #{maintenanceLinkman,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceLinkphone != null" >
+        #{maintenanceLinkphone,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.winphone.entity.MaintenanceContract" >
+    update dm_maintenance_contract_
+    <set >
+      <if test="maintenanceContractNo != null" >
+        maintenance_contract_no_ = #{maintenanceContractNo,jdbcType=CHAR},
+      </if>
+      <if test="deviceId != null" >
+        device_id_ = #{deviceId,jdbcType=CHAR},
+      </if>
+      <if test="maintenanceTerm != null" >
+        maintenance_term_ = #{maintenanceTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceLinkman != null" >
+        maintenance_linkman_ = #{maintenanceLinkman,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceLinkphone != null" >
+        maintenance_linkphone_ = #{maintenanceLinkphone,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time_ = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null" >
+        update_user_ = #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time_ = #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where maintenance_contract_id_ = #{maintenanceContractId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.winphone.entity.MaintenanceContract" >
+    update dm_maintenance_contract_
+    set maintenance_contract_no_ = #{maintenanceContractNo,jdbcType=CHAR},
+      device_id_ = #{deviceId,jdbcType=CHAR},
+      maintenance_term_ = #{maintenanceTerm,jdbcType=VARCHAR},
+      maintenance_linkman_ = #{maintenanceLinkman,jdbcType=VARCHAR},
+      maintenance_linkphone_ = #{maintenanceLinkphone,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=CHAR},
+      create_time_ = #{createTime,jdbcType=VARCHAR},
+      update_user_ = #{updateUser,jdbcType=CHAR},
+      update_time_ = #{updateTime,jdbcType=VARCHAR}
+    where maintenance_contract_id_ = #{maintenanceContractId,jdbcType=CHAR}
+  </update>
+  <select id="listPageMaintenanceContract" parameterType="com.winphone.entity.MaintenanceContract" resultMap="BaseResultMap">
+  	select *
+    from dm_maintenance_contract_ 
+    where 1=1
+      <if test="deviceId != null and deviceId != ''" >
+        and device_id_ = #{deviceId,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceLinkman != null and maintenanceLinkman != ''" >
+        and maintenance_linkman_ = #{maintenanceLinkman,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceLinkphone != null and maintenanceLinkphone != ''" >
+        and maintenance_linkphone_ = #{maintenanceLinkphone,jdbcType=CHAR}
+      </if>
+  </select>
+  <select id="listMaintenanceContracts" parameterType="com.winphone.entity.MaintenanceContract" resultMap="BaseResultMap">
+  	select *
+    from dm_maintenance_contract_
+    where 1=1
+      <if test="deviceId != null and deviceId != ''" >
+        and device_id_ = #{deviceId,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceLinkman != null and maintenanceLinkman != ''" >
+        and maintenance_linkman_ = #{maintenanceLinkman,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceLinkphone != null and maintenanceLinkphone != ''" >
+        and maintenance_linkphone_ = #{maintenanceLinkphone,jdbcType=CHAR}
+      </if>
+  </select>
+</mapper>

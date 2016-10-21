@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.winphone.mapper.DeviceTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.winphone.entity.DeviceType" >
+    <id column="device_type_id_" property="deviceTypeId" jdbcType="CHAR" />
+    <result column="device_type_name_" property="deviceTypeName" jdbcType="VARCHAR" />
+    <result column="device_type_no_" property="deviceTypeNo" jdbcType="CHAR" />
+    <result column="create_user_" property="createUser" jdbcType="CHAR" />
+    <result column="create_time_" property="createTime" jdbcType="VARCHAR" />
+    <result column="update_user_" property="updateUser" jdbcType="CHAR" />
+    <result column="update_time_" property="updateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    device_type_id_, device_type_name_, device_type_no_, create_user_, create_time_, 
+    update_user_, update_time_
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dm_device_type_
+    where device_type_id_ = #{deviceTypeId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dm_device_type_
+    where device_type_id_ = #{deviceTypeId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.winphone.entity.DeviceType" >
+    insert into dm_device_type_ (device_type_id_, device_type_name_, device_type_no_, 
+      create_user_, create_time_, update_user_, 
+      update_time_)
+    values (#{deviceTypeId,jdbcType=CHAR}, #{deviceTypeName,jdbcType=VARCHAR}, #{deviceTypeNo,jdbcType=CHAR}, 
+      #{createUser,jdbcType=CHAR}, #{createTime,jdbcType=VARCHAR}, #{updateUser,jdbcType=CHAR}, 
+      #{updateTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.winphone.entity.DeviceType" >
+    insert into dm_device_type_
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="deviceTypeId != null" >
+        device_type_id_,
+      </if>
+      <if test="deviceTypeName != null" >
+        device_type_name_,
+      </if>
+      <if test="deviceTypeNo != null" >
+        device_type_no_,
+      </if>
+      <if test="createUser != null" >
+        create_user_,
+      </if>
+      <if test="createTime != null" >
+        create_time_,
+      </if>
+      <if test="updateUser != null" >
+        update_user_,
+      </if>
+      <if test="updateTime != null" >
+        update_time_,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="deviceTypeId != null" >
+        #{deviceTypeId,jdbcType=CHAR},
+      </if>
+      <if test="deviceTypeName != null" >
+        #{deviceTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceTypeNo != null" >
+        #{deviceTypeNo,jdbcType=CHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.winphone.entity.DeviceType" >
+    update dm_device_type_
+    <set >
+      <if test="deviceTypeName != null" >
+        device_type_name_ = #{deviceTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceTypeNo != null" >
+        device_type_no_ = #{deviceTypeNo,jdbcType=CHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user_ = #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time_ = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null" >
+        update_user_ = #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time_ = #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where device_type_id_ = #{deviceTypeId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.winphone.entity.DeviceType" >
+    update dm_device_type_
+    set device_type_name_ = #{deviceTypeName,jdbcType=VARCHAR},
+      device_type_no_ = #{deviceTypeNo,jdbcType=CHAR},
+      create_user_ = #{createUser,jdbcType=CHAR},
+      create_time_ = #{createTime,jdbcType=VARCHAR},
+      update_user_ = #{updateUser,jdbcType=CHAR},
+      update_time_ = #{updateTime,jdbcType=VARCHAR}
+    where device_type_id_ = #{deviceTypeId,jdbcType=CHAR}
+  </update>
+  
+  <select id="listPageDeviceType" parameterType="com.winphone.entity.DeviceType" resultMap="BaseResultMap">
+  	select *
+    from dm_device_type_ 
+    where 1=1
+      <if test="deviceTypeNo != null and deviceTypeNo != ''" >
+        and device_type_no_ = #{deviceTypeNo,jdbcType=CHAR}
+      </if>
+      <if test="deviceTypeName != null and deviceTypeName != ''" >
+        and device_type_name_ like CONCAT(CONCAT('%', #{deviceTypeName}),'%')
+      </if>
+  </select>
+  <select id="listDeviceTypes" parameterType="com.winphone.entity.DeviceType" resultMap="BaseResultMap">
+  	select *
+    from dm_device_type_
+    where 1=1
+      <if test="deviceTypeNo != null and deviceTypeNo != ''" >
+        and device_type_no_ = #{deviceTypeNo,jdbcType=CHAR}
+      </if>
+      <if test="deviceTypeName != null and deviceTypeName != ''" >
+        and device_type_name_ like CONCAT(CONCAT('%', #{deviceTypeName}),'%')
+      </if>
+  </select>
+</mapper>

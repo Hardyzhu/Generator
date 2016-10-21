@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.winphone.mapper.MaintenancePlanMapper" >
+  <resultMap id="BaseResultMap" type="com.winphone.entity.MaintenancePlan" >
+    <id column="maintenance_plan_id_" property="maintenancePlanId" jdbcType="CHAR" />
+    <result column="device_id_" property="deviceId" jdbcType="CHAR" />
+    <result column="maintenance_time_" property="maintenanceTime" jdbcType="VARCHAR" />
+    <result column="maintenance_liableman_" property="maintenanceLiableman" jdbcType="VARCHAR" />
+    <result column="maintenance_status_" property="maintenanceStatus" jdbcType="CHAR" />
+    <result column="create_user_" property="createUser" jdbcType="CHAR" />
+    <result column="create_time_" property="createTime" jdbcType="VARCHAR" />
+    <result column="update_user_" property="updateUser" jdbcType="CHAR" />
+    <result column="update_time_" property="updateTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    maintenance_plan_id_, device_id_, maintenance_time_, maintenance_liableman_, maintenance_status_, 
+    create_user_, create_time_, update_user_, update_time_
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dm_maintenance_plan_
+    where maintenance_plan_id_ = #{maintenancePlanId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dm_maintenance_plan_
+    where maintenance_plan_id_ = #{maintenancePlanId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.winphone.entity.MaintenancePlan" >
+    insert into dm_maintenance_plan_ (maintenance_plan_id_, device_id_, maintenance_time_, 
+      maintenance_liableman_, maintenance_status_, create_user_, 
+      create_time_, update_user_, update_time_
+      )
+    values (#{maintenancePlanId,jdbcType=CHAR}, #{deviceId,jdbcType=CHAR}, #{maintenanceTime,jdbcType=VARCHAR}, 
+      #{maintenanceLiableman,jdbcType=VARCHAR}, #{maintenanceStatus,jdbcType=CHAR}, #{createUser,jdbcType=CHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{updateUser,jdbcType=CHAR}, #{updateTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.winphone.entity.MaintenancePlan" >
+    insert into dm_maintenance_plan_
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="maintenancePlanId != null" >
+        maintenance_plan_id_,
+      </if>
+      <if test="deviceId != null" >
+        device_id_,
+      </if>
+      <if test="maintenanceTime != null" >
+        maintenance_time_,
+      </if>
+      <if test="maintenanceLiableman != null" >
+        maintenance_liableman_,
+      </if>
+      <if test="maintenanceStatus != null" >
+        maintenance_status_,
+      </if>
+      <if test="createUser != null" >
+        create_user_,
+      </if>
+      <if test="createTime != null" >
+        create_time_,
+      </if>
+      <if test="updateUser != null" >
+        update_user_,
+      </if>
+      <if test="updateTime != null" >
+        update_time_,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="maintenancePlanId != null" >
+        #{maintenancePlanId,jdbcType=CHAR},
+      </if>
+      <if test="deviceId != null" >
+        #{deviceId,jdbcType=CHAR},
+      </if>
+      <if test="maintenanceTime != null" >
+        #{maintenanceTime,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceLiableman != null" >
+        #{maintenanceLiableman,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceStatus != null" >
+        #{maintenanceStatus,jdbcType=CHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.winphone.entity.MaintenancePlan" >
+    update dm_maintenance_plan_
+    <set >
+      <if test="deviceId != null" >
+        device_id_ = #{deviceId,jdbcType=CHAR},
+      </if>
+      <if test="maintenanceTime != null" >
+        maintenance_time_ = #{maintenanceTime,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceLiableman != null" >
+        maintenance_liableman_ = #{maintenanceLiableman,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceStatus != null" >
+        maintenance_status_ = #{maintenanceStatus,jdbcType=CHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user_ = #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time_ = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null" >
+        update_user_ = #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time_ = #{updateTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where maintenance_plan_id_ = #{maintenancePlanId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.winphone.entity.MaintenancePlan" >
+    update dm_maintenance_plan_
+    set device_id_ = #{deviceId,jdbcType=CHAR},
+      maintenance_time_ = #{maintenanceTime,jdbcType=VARCHAR},
+      maintenance_liableman_ = #{maintenanceLiableman,jdbcType=VARCHAR},
+      maintenance_status_ = #{maintenanceStatus,jdbcType=CHAR},
+      create_user_ = #{createUser,jdbcType=CHAR},
+      create_time_ = #{createTime,jdbcType=VARCHAR},
+      update_user_ = #{updateUser,jdbcType=CHAR},
+      update_time_ = #{updateTime,jdbcType=VARCHAR}
+    where maintenance_plan_id_ = #{maintenancePlanId,jdbcType=CHAR}
+  </update>
+  <select id="listPageMaintenancePlan" parameterType="com.winphone.entity.MaintenancePlan" resultMap="BaseResultMap">
+  	select *
+    from dm_maintenance_plan_ 
+    where 1=1
+      <if test="deviceId != null and deviceId != ''" >
+        and device_id_ = #{deviceId,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceLiableman != null and maintenanceLiableman != ''" >
+        and maintenance_liableman_ = #{maintenanceLiableman,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceStatus != null and maintenanceStatus != ''" >
+        and maintenance_status_ = #{maintenanceStatus,jdbcType=CHAR}
+      </if>
+  </select>
+  <select id="listMaintenancePlans" parameterType="com.winphone.entity.MaintenancePlan" resultMap="BaseResultMap">
+  	select *
+    from dm_maintenance_plan_
+    where 1=1
+      <if test="deviceId != null and deviceId != ''" >
+        and device_id_ = #{deviceId,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceLiableman != null and maintenanceLiableman != ''" >
+        and maintenance_liableman_ = #{maintenanceLiableman,jdbcType=CHAR}
+      </if>
+      <if test="maintenanceStatus != null and maintenanceStatus != ''" >
+        and maintenance_status_ = #{maintenanceStatus,jdbcType=CHAR}
+      </if>
+  </select>
+</mapper>
