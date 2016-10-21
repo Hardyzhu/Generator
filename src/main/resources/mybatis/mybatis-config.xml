@@ -4,58 +4,12 @@
 <configuration>  
   
     <!-- 实体类,简称 -设置别名 -->  
-    <typeAliases>
-    	<!-- 设备信息表-->
-        <typeAlias alias="Device" type="com.winphone.entity.Device" />
-        <!-- 设备类型表-->
-        <typeAlias alias="DeviceType" type="com.winphone.entity.DeviceType" />
-        <!-- 设备类型扩展属性表-->
-        <typeAlias alias="DeviceTypeExtAttr" type="com.winphone.entity.DeviceTypeExtAttr" />
-        <!-- 设备扩展属性值表-->
-        <typeAlias alias="DeviceTypeExtAttrValue" type="com.winphone.entity.DeviceTypeExtAttrValue" />
-        <!-- 设备告警信息表-->
-        <typeAlias alias="DeviceWarning" type="com.winphone.entity.DeviceWarning" />
-        <!-- 维保合同信息表-->
-        <typeAlias alias="MaintenanceContract" type="com.winphone.entity.MaintenanceContract" />
-        <!-- 维保知识表-->
-        <typeAlias alias="MaintenanceLore" type="com.winphone.entity.MaintenanceLore" />
-        <!-- 维保计划信息表-->
-        <typeAlias alias="MaintenancePlan" type="com.winphone.entity.MaintenancePlan" />
-        <!-- 监控录像信息表-->
-        <typeAlias alias="MonitorVideo" type="com.winphone.entity.MonitorVideo" />
-    </typeAliases>
     <!-- 实体接口映射资源 --> 
     
-    <plugins>
-		<plugin interceptor="com.winphone.common.PagePlugin">
-			<property name="dialect" value="mysql" />
-			<property name="pageSqlId" value=".*listPage.*" />
-		</plugin>
-	</plugins>
     
     
     <!-- 
         说明：如果xxMapper.xml配置文件放在和xxMapper.java统一目录下，mappers也可以省略，因为org.mybatis.spring.mapper.MapperFactoryBean默认会去查找与xxMapper.java相同目录和名称的xxMapper.xml 
     -->  
-    <mappers>
-    	<!-- 设备信息表-->
-        <mapper resource="mybatis/DeviceMapper.xml" />
-        <!-- 设备类型表-->
-        <mapper resource="mybatis/DeviceTypeMapper.xml" />
-        <!-- 设备类型扩展属性表-->
-        <mapper resource="mybatis/DeviceTypeExtAttrMapper.xml" />
-        <!-- 设备扩展属性值表-->
-        <mapper resource="mybatis/DeviceTypeExtAttrValueMapper.xml" />
-        <!-- 设备告警信息表-->
-        <mapper resource="mybatis/DeviceWarningMapper.xml" />
-        <!-- 维保合同信息表-->
-        <mapper resource="mybatis/MaintenanceContractMapper.xml" />
-        <!-- 维保知识表-->
-        <mapper resource="mybatis/MaintenanceLoreMapper.xml" />
-        <!-- 维保计划信息表-->
-        <mapper resource="mybatis/MaintenancePlanMapper.xml" />
-        <!-- 监控录像信息表-->
-        <mapper resource="mybatis/MonitorVideoMapper.xml" />
-    </mappers>
   
 </configuration>
