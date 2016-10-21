@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<o:Table Id="o32">
+	<a:ObjectID>2813EA16-652E-422D-B50C-AD657BA173EF</a:ObjectID>
+	<a:Name>组件</a:Name>
+	<a:Code>DOC_WIDGET</a:Code>
+	<a:CreationDate>1266844133</a:CreationDate>
+	<a:Creator>Administrator</a:Creator>
+	<a:ModificationDate>1266844674</a:ModificationDate>
+	<a:Modifier>Administrator</a:Modifier>
+	<a:History>ORG {C4B6FEC7-404F-4549-B78D-01C6AA666683} DAT 1266844135</a:History>
+	<c:Columns>
+		<o:Column Id="o87">
+			<a:ObjectID>AD8DE65B-59BD-4885-A27E-009C27FD938A</a:ObjectID>
+			<a:Name>WIDGET_ID</a:Name>
+			<a:Code>WIDGET_ID</a:Code>
+			<a:CreationDate>1266844133</a:CreationDate>
+			<a:Creator>Administrator</a:Creator>
+			<a:ModificationDate>1266844133</a:ModificationDate>
+			<a:Modifier>Administrator</a:Modifier>
+			<a:History>ORG {9731BAE9-2C46-4004-8322-99241237A987} DAT 1266844135</a:History>
+			<a:DataType>varchar(32)</a:DataType>
+			<a:Length>32</a:Length>
+			<a:Mandatory>1</a:Mandatory>
+			<c:Domain>
+				<o:PhysicalDomain Ref="o37" />
+			</c:Domain>
+		</o:Column>
+		<o:Column Id="o88">
+			<a:ObjectID>0AB47A8D-CD25-4287-A097-02698D1687B7</a:ObjectID>
+			<a:Name>WIDGET_TYPE_ID</a:Name>
+			<a:Code>WIDGET_TYPE_ID</a:Code>
+			<a:CreationDate>1266844134</a:CreationDate>
+			<a:Creator>Administrator</a:Creator>
+			<a:ModificationDate>1266844134</a:ModificationDate>
+			<a:Modifier>Administrator</a:Modifier>
+			<a:History>ORG {783EDDFC-2425-41B3-AAD4-1C341F5E5646},{14594507-815B-4D91-8FAC-EAEE8BF7B67E} DAT 1266844135</a:History>
+			<a:DataType>varchar(32)</a:DataType>
+			<a:Length>32</a:Length>
+			<c:Domain>
+				<o:PhysicalDomain Ref="o37" />
+			</c:Domain>
+		</o:Column>
+		<o:Column Id="o89">
+			<a:ObjectID>674C95DD-A90B-418E-B447-73E147CFC03C</a:ObjectID>
+			<a:Name>组件CODE</a:Name>
+			<a:Code>WIDGET_CODE</a:Code>
+			<a:CreationDate>1266844133</a:CreationDate>
+			<a:Creator>Administrator</a:Creator>
+			<a:ModificationDate>1266844133</a:ModificationDate>
+			<a:Modifier>Administrator</a:Modifier>
+			<a:History>ORG {1A60068F-E8DF-4E31-BD11-2C2E6963C046} DAT 1266844135</a:History>
+			<a:DataType>varchar(32)</a:DataType>
+			<a:Length>32</a:Length>
+			<a:Mandatory>1</a:Mandatory>
+		</o:Column>
+		<o:Column Id="o90">
+			<a:ObjectID>EB63401C-5B18-4719-81AB-AB941C7CA6CF</a:ObjectID>
+			<a:Name>组件名称</a:Name>
+			<a:Code>WIDGET_NAME</a:Code>
+			<a:CreationDate>1266844133</a:CreationDate>
+			<a:Creator>Administrator</a:Creator>
+			<a:ModificationDate>1266844133</a:ModificationDate>
+			<a:Modifier>Administrator</a:Modifier>
+			<a:History>ORG {4713C7D1-E66F-40D9-8D53-52C38A99990F} DAT 1266844135</a:History>
+			<a:DataType>varchar(100)</a:DataType>
+			<a:Length>100</a:Length>
+			<c:Domain>
+				<o:PhysicalDomain Ref="o40" />
+			</c:Domain>
+		</o:Column>
+	</c:Columns>
+	<c:Keys>
+		<o:Key Id="o91">
+			<a:ObjectID>21612EAE-EA94-4F28-825F-16BB1C6F8F25</a:ObjectID>
+			<a:Name>980101</a:Name>
+			<a:Code>980101</a:Code>
+			<a:CreationDate>1266844133</a:CreationDate>
+			<a:Creator>Administrator</a:Creator>
+			<a:ModificationDate>1268123350</a:ModificationDate>
+			<a:Modifier>Administrator</a:Modifier>
+			<a:History>ORG {3E863075-1D13-4AC2-8C03-CFFA96650D71} DAT 1266844135</a:History>
+			<c:Key.Columns>
+				<o:Column Ref="o87" />
+			</c:Key.Columns>
+		</o:Key>
+	</c:Keys>
+	<c:Indexes>
+		<o:Index Id="o92">
+			<a:ObjectID>25BE41C6-DA70-4DA7-B074-203B341F74E2</a:ObjectID>
+			<a:Name>DOC_WIDGET_PK</a:Name>
+			<a:Code>DOC_WIDGET_PK</a:Code>
+			<a:CreationDate>1266844135</a:CreationDate>
+			<a:Creator>Administrator</a:Creator>
+			<a:ModificationDate>1266844135</a:ModificationDate>
+			<a:Modifier>Administrator</a:Modifier>
+			<a:Unique>1</a:Unique>
+			<c:LinkedObject>
+				<o:Key Ref="o91" />
+			</c:LinkedObject>
+			<c:IndexColumns>
+				<o:IndexColumn Id="o93">
+					<a:ObjectID>6F3DE1D4-6796-4AA9-BC63-79E61A6EBD0B</a:ObjectID>
+					<a:CreationDate>1266844135</a:CreationDate>
+					<a:Creator>Administrator</a:Creator>
+					<a:ModificationDate>1266844135</a:ModificationDate>
+					<a:Modifier>Administrator</a:Modifier>
+					<c:Column>
+						<o:Column Ref="o87" />
+					</c:Column>
+				</o:IndexColumn>
+			</c:IndexColumns>
+		</o:Index>
+		<o:Index Id="o94">
+			<a:ObjectID>57743D5D-E17A-4E0A-99CE-A730C2541E78</a:ObjectID>
+			<a:Name>Relationship_24_FK</a:Name>
+			<a:Code>Relationship_24_FK</a:Code>
+			<a:CreationDate>1266844135</a:CreationDate>
+			<a:Creator>Administrator</a:Creator>
+			<a:ModificationDate>1266844135</a:ModificationDate>
+			<a:Modifier>Administrator</a:Modifier>
+			<c:LinkedObject>
+				<o:Reference Ref="o29" />
+			</c:LinkedObject>
+			<c:IndexColumns>
+				<o:IndexColumn Id="o95">
+					<a:ObjectID>B989F02F-1DA0-4B2B-B87A-C542895020AA</a:ObjectID>
+					<a:CreationDate>1266844135</a:CreationDate>
+					<a:Creator>Administrator</a:Creator>
+					<a:ModificationDate>1266844135</a:ModificationDate>
+					<a:Modifier>Administrator</a:Modifier>
+					<c:Column>
+						<o:Column Ref="o88" />
+					</c:Column>
+				</o:IndexColumn>
+			</c:IndexColumns>
+		</o:Index>
+	</c:Indexes>
+	<c:PrimaryKey>
+		<o:Key Ref="o91" />
+	</c:PrimaryKey>
+</o:Table>

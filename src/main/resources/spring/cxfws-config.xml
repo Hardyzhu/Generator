@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+    http://cxf.apache.org/jaxrs
+    http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+    <!-- <jaxws:endpoint id="MemberWebService" implementor="#memberService"    
+        address="#memberService" />     -->
+
+	
+	<!-- <jaxws:endpoint id="UserWebService" implementor="#userService"
+		address="/UserService">
+		inInterceptors表示被外部调用时，调用此拦截器
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.binding.soap.saaj.SAAJInInterceptor" />
+			<bean class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">
+				<constructor-arg>
+					<map>
+						设置加密类型
+						<entry key="action" value="UsernameToken" />
+						设置密码类型为明文
+						<entry key="passwordType" value="PasswordText" />
+						<entry key="action" value="UsernameToken Timestamp" /> 设置密码类型为加密<entry 
+							key="passwordType" value="PasswordDigest" />
+						<entry key="passwordCallbackClass" value="com.winphone.utils.WsAuthHandler" />
+					</map>
+				</constructor-arg>
+			</bean>
+		</jaxws:inInterceptors>
+	</jaxws:endpoint>
+	
+	<jaxws:endpoint id="ProjectWebService" implementor="#projectService"
+		address="/ProjectService">
+	</jaxws:endpoint>
+	<jaxws:endpoint id="PersonBuildingWebService" implementor="#personBuildingNewService"
+		address="/PersonBuildingNewService">
+	</jaxws:endpoint>
+	<jaxws:endpoint id="PersonCustNewWebService" implementor="#personCustNewService"
+		address="/PersonCustNewService">
+	</jaxws:endpoint>
+	
+	<jaxws:endpoint id="HouseNewWebService" implementor="#houseNewService"
+		address="/HouseNewService">
+	</jaxws:endpoint>
+	
+	<jaxws:endpoint id="SipmanageWebService" implementor="#sipmanageService"
+		address="/SipmanageService" >
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="BuildingStructureNewWebService" implementor="#buildingStructureNewService"
+		address="/BuildingStructureNewService" >
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="ArticleReleaseService" implementor="#articleReleaseService"
+		address="/ArticleReleaseService" >
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="PetRegistrationService" implementor="#petRegistrationService"
+		address="/PetRegistrationService" >
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="TasksService" implementor="#tasksService"
+		address="/TasksService" >
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="NewLeaseService" implementor="#newLeaseService"
+		address="/NewLeaseService" >
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="PaymsService" implementor="#paymsService"
+    	address="/PaymsService">
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="PropertyAppService" implementor="#propertyAppService"
+    	address="/PropertyAppService">
+    </jaxws:endpoint>
+    
+    <jaxws:endpoint id="AppUserAuditService" implementor="#appUserAuditService"
+		address="/AppUserAuditService">
+	</jaxws:endpoint> -->
+</beans>

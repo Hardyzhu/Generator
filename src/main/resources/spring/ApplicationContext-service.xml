@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="deviceService" class="com.winphone.service.impl.DeviceServiceImpl">
+		<property name="deviceMapper" ref="deviceMapper"></property>
+	</bean>
+	<bean id="deviceTypeExtAttrService" class="com.winphone.service.impl.DeviceTypeExtAttrServiceImpl">
+		<property name="deviceTypeExtAttrMapper" ref="deviceTypeExtAttrMapper"></property>
+	</bean>
+	<bean id="deviceTypeExtAttrValueService" class="com.winphone.service.impl.DeviceTypeExtAttrValueServiceImpl">
+		<property name="deviceTypeExtAttrValueMapper" ref="deviceTypeExtAttrValueMapper"></property>
+	</bean>
+	<bean id="deviceTypeService" class="com.winphone.service.impl.DeviceTypeServiceImpl">
+		<property name="deviceTypeMapper" ref="deviceTypeMapper"></property>
+	</bean>
+	<bean id="deviceWarningService" class="com.winphone.service.impl.DeviceWarningServiceImpl">
+		<property name="deviceWarningMapper" ref="deviceWarningMapper"></property>
+	</bean>
+	<bean id="maintenanceContractService" class="com.winphone.service.impl.MaintenanceContractServiceImpl">
+		<property name="maintenanceContractMapper" ref="maintenanceContractMapper"></property>
+	</bean>
+	<bean id="maintenanceLoreService" class="com.winphone.service.impl.MaintenanceLoreServiceImpl">
+		<property name="maintenanceLoreMapper" ref="maintenanceLoreMapper"></property>
+	</bean>
+	<bean id="maintenancePlanService" class="com.winphone.service.impl.MaintenancePlanServiceImpl">
+		<property name="maintenancePlanMapper" ref="maintenancePlanMapper"></property>
+	</bean>
+	<bean id="monitorVideoService" class="com.winphone.service.impl.MonitorVideoServiceImpl">
+		<property name="monitorVideoMapper" ref="monitorVideoMapper"></property>
+	</bean>
+</beans>
